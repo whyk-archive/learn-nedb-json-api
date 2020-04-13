@@ -3,5 +3,5 @@
 
 ## 使い方
 1. cloneするなり[ZIPダウンロード](https://github.com/windchime-yk/learn-express-json-api/archive/master.zip)するなりして、ローカルに持ってきてください
-2. ターミナルでディレクトリまで移動して、`node app`を叩いてサーバーを立ち上げてください
+2. ターミナルでディレクトリまで移動して、`yarn start`を叩いてサーバーを立ち上げてください
 3. [Postman](https://www.postman.com/)でGET/POSTしてみてください

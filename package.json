@@ -2,6 +2,9 @@
   "name": "learn-express-json-api",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
   "repository": "git@github.com:windchime-yk/learn-express-json-api.git",
   "author": "WhyK <windchimeyk@gmail.com>",
   "license": "MIT",
@@ -9,5 +12,8 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
