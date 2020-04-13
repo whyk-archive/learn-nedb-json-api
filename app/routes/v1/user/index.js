@@ -2,8 +2,9 @@ const express = require('express')
 const router = express.Router()
 const db = require('../../../db/')
 
-router.get('/', (_, res) => {
-  db.find({}, (err, doc) => {
+router.get('/', (req, res) => {
+  const query = req.query.name ? { name: req.query.name } : {}
+  db.find(query, (err, doc) => {
     if (err) console.error(err)
     else res.json(doc)
   })
