@@ -3,26 +3,34 @@
 MongoDBの代わりにNeDBを採用しています。
 
 ## 使い方
-1. cloneするなり[ZIPダウンロード](https://github.com/windchime-yk/learn-express-json-api/archive/master.zip)するなりして、ローカルに持ってきてください
+1. cloneするか[ZIPダウンロード](https://github.com/windchime-yk/learn-express-json-api/archive/master.zip)をして、ローカルに持ってきてください
 2. ターミナルでディレクトリまで移動して、`yarn start`を叩いてサーバーを立ち上げてください
 3. [Postman](https://www.postman.com/)でGET/POST/DELETEしてみてください
 
 ### HTTPメソッドの送信方法
-APIキーですが、任意で指定してください。  
-ディレクトリ直下に`.env.sample`というのがあるので、そこの`X-API-KEY`の値を編集し、Postmanでheadersに`x-api-key`を追加してその値を入れればPOST/DELETEメソッドが動作します。
+GET/POST/DELETEが利用可能ですが、POST/DELETEについては任意のAPIキーが必要です。  
+ディレクトリ直下に`.env.sample`というのがあるので、そこの`X-API-KEY`の値を編集し、Postmanでheadersに`x-api-key`を追加してその値を入れれば、動作させることができます。
 
 #### GET
-GETメソッドを選択し、Postmanで`http://localhost:3000/api/v1/user/`と送信してください。  
-何かしら値があればJSONが返ってきます。
+PostmanでGETメソッドを選択し、`http://localhost:3000/api/v1/user/`と送信してください。  
+POSTしてなければ空の配列が、していればJSONが返ってきます。
 
 また、`http://localhost:3000/api/v1/user/?name=hogehoge`のように`name`パラメーターを追加することで、任意の名前を持つObjectを返すことができます。
 
 #### POST
-POSTメソッドを選択し、Postmanで`http://localhost:3000/api/v1/user/`と入力して、Bodyタブから値を送信してください。  
+PostmanでPOSTメソッドを選択し、`http://localhost:3000/api/v1/user/`と入力して、Bodyタブから値を送信してください。  
+Bodyに追加可能なkeyは以下のとおりです。  
+``` json
+{
+  "name": "",
+  "screen_name": "",
+  "bio": ""
+}
+```
 この際、headersに`x-api-key`を追加しないと送信してもブロックされます。
 
 #### DELETE
-DELETEメソッドを選択し、Postmanで`http://localhost:3000/api/v1/user/?name=hogehoge`のように、`name`パラメーターで削除したいクエリを入力し、送信してください。  
+PostmanでDELETEメソッドを選択し、`http://localhost:3000/api/v1/user/?name=hogehoge`のように、`name`パラメーターで削除したいクエリを入力し、送信してください。  
 この際、headersに`x-api-key`を追加しないと送信してもブロックされます。
 
 ## 参考資料
