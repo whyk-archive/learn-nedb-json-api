@@ -23,4 +23,11 @@ router.post('/', (req, res) => {
   })
 })
 
+router.delete('/', (req, res) => {
+  db.remove({ name: req.query.name }, (err, _) => {
+    if (err) res.end(err)
+    else res.end('削除が完了しました')
+  })
+})
+
 module.exports = router
