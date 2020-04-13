@@ -11,6 +11,11 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  if (!req.headers['x-api-key']) {
+    res.end('API KEYがありません')
+    return
+  }
+
   const user = {
     name: req.body.name,
     screen_name: req.body.screen_name,
@@ -24,6 +29,11 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/', (req, res) => {
+  if (!req.headers['x-api-key']) {
+    res.end('API KEYがありません')
+    return
+  }
+
   db.remove({ name: req.query.name }, (err, _) => {
     if (err) res.end(err)
     else res.end('削除が完了しました')
