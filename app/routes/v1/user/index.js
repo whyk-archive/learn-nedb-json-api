@@ -3,6 +3,15 @@ const router = express.Router()
 const db = require('../../../db/')
 
 router.get('/', (req, res) => {
+  if (!req.headers['x-api-key']) {
+    return res.status(400).json({
+      error: {
+        message: 'API KEYが設定されていません',
+        tip: 'headersにX-API-KEYという名前で設定してください'
+      }
+    })
+  }
+
   const query = req.query.name ? { name: req.query.name } : {}
   db.find(query, (err, doc) => {
     if (err) console.error(err)
