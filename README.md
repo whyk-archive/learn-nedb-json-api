@@ -14,6 +14,7 @@ GET/POST/DELETEが利用可能ですが、POST/DELETEについては任意のAPI
 #### GET
 PostmanでGETメソッドを選択し、`http://localhost:3000/api/v1/user/`と送信してください。  
 POSTしてなければ空の配列が、していればJSONが返ってきます。
+この際、headersに`x-api-key`を追加しないと、送信しても400エラーが返ってきます。
 
 また、`http://localhost:3000/api/v1/user/?name=hogehoge`のように`name`パラメーターを追加することで、任意の名前を持つObjectを返すことができます。
 
@@ -27,11 +28,13 @@ Bodyに追加可能なkeyは以下のとおりです。
   "bio": ""
 }
 ```
-この際、headersに`x-api-key`を追加しないと送信してもブロックされます。
+この際、headersに`x-api-key`を追加しないと、送信しても400エラーが返ってきます。
+
+`name`が重複する場合は、正しいAPI KEYが設定されていても409エラーが返ってきます。
 
 #### DELETE
 PostmanでDELETEメソッドを選択し、`http://localhost:3000/api/v1/user/?name=hogehoge`のように、`name`パラメーターで削除したいクエリを入力し、送信してください。  
-この際、headersに`x-api-key`を追加しないと送信してもブロックされます。
+この際、headersに`x-api-key`を追加しないと、送信しても400エラーが返ってきます。
 
 ## 参考資料
 - [サルでも分かるExpressでのjsonAPIサーバーの作り方](https://qiita.com/ngmr_mo/items/73cc7160d002a4989416)
