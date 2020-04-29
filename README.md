@@ -13,7 +13,7 @@ GET/POST/DELETEが利用可能ですが、POST/DELETEについては任意のAPI
 
 #### GET
 PostmanでGETメソッドを選択し、`http://localhost:3000/api/v1/user/`と送信してください。  
-POSTしてなければ空の配列が、していればJSONが返ってきます。
+POSTしてなければ空の配列が、していればJSONが返ってきます。  
 この際、headersに`x-api-key`を追加しないと、送信しても400エラーが返ってきます。
 
 また、`http://localhost:3000/api/v1/user/?name=hogehoge`のように`name`パラメーターを追加することで、任意の名前を持つObjectを返すことができます。
