@@ -1,5 +1,5 @@
-const Datebase = require('nedb')
-const crypto = require('crypto')
+import Datebase from 'nedb'
+import crypto from 'crypto'
 
 const PASSWORD = 'hogehoge'
 
@@ -25,4 +25,4 @@ db.loadDatabase(err => {
   console.log('load database completed.')
 })
 
-module.exports = db
+export default db

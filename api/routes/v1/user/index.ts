@@ -1,6 +1,6 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const db = require('../../../db/')
+import db from '../../../db'
 
 router.get('/', (req, res) => {
   if (!req.headers['x-api-key']) {
@@ -66,4 +66,4 @@ router.delete('/', (req, res) => {
   })
 })
 
-module.exports = router
+export default router
