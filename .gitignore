@@ -103,4 +103,4 @@ dist
 # TernJS port file
 .tern-port
 
-app/db/*.db
+api/db/*.db

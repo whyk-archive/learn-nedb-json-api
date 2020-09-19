@@ -16,7 +16,7 @@ const db = new Datebase({
     doc += decipher.final('utf8')
     return doc
   },
-  filename: 'app/db/user.db'
+  filename: 'api/db/user.db'
 })
 
 db.loadDatabase(err => {

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app"
+    "start": "nodemon api"
   },
   "repository": "git@github.com:windchime-yk/learn-express-json-api.git",
   "author": "WhyK <windchimeyk@gmail.com>",
