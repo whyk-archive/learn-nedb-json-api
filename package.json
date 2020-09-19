@@ -1,13 +1,7 @@
 {
-  "name": "learn-express-json-api",
-  "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "start": "nodemon api"
   },
-  "repository": "git@github.com:windchime-yk/learn-express-json-api.git",
-  "author": "WhyK <windchimeyk@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
